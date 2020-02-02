@@ -1,4 +1,4 @@
-#include "tests.h"
+#include <iostream>
 
 class A6
 {
@@ -50,10 +50,15 @@ public:
 private:
     A6 a;
 };
-void nir::run_test_6() {
+void run_test_6() {
 	std::cout << "54:\n"; B6 b;
 	std::cout << "55:\n"; A6 *a = new A6;
 	std::cout << "56:\n"; *a = b.do_some_stuff();
 	std::cout << "57:\n"; [&b](A6* c) ->void { b = *c; c->print(); } (a);
 	std::cout << "58:\n"; delete a;
+}
+
+int main() {
+	run_test_6();
+	return 0;
 }
